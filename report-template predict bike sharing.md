@@ -59,6 +59,29 @@ Data Cleaning and Preprocessing - Spending more time on data cleaning and prepro
 |add_features|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|0.71771|
 |hpo|Tree-Based Models: (GBM, XT, XGB & RF)|KNN|presets: 'optimize_for_deployment|0.47758|
 
+Initial Model:
+
+Hyperparameters Modified: hpo1, hpo2, hpo3
+Explanation: The initial model likely used default or predetermined values for the hyperparameters hpo1 and hpo2, while hpo3 was set to 'high quality' presets with auto_stack enabled.
+Kaggle Score: 1.81113
+Impact of this change
+The high Kaggle score suggests that the preset 'high quality' settings for hpo3, particularly with auto_stack enabled, might have contributed significantly to the model's performance. It's possible that these settings improved model accuracy or generalization ability.
+
+Add Features Model:
+
+Hyperparameters Modified: hpo1, hpo2, hpo3
+Explanation: Similar to the initial model, this iteration also used prescribed values for hpo1 and hpo2, with hpo3 set to 'high quality' presets with auto_stack enabled.
+Kaggle Score: 0.71771
+Impact of Change 
+Despite using the same hyperparameter settings as the initial model, the addition of features led to a significant drop in the Kaggle score. This suggests that while the original hyperparameter configuration might have been effective for the initial dataset, it might not generalize well to the expanded feature set. Further analysis could reveal whether specific hyperparameters need to be adjusted to accommodate the new features.
+
+HPO Model:
+
+Hyperparameters Modified: hpo1, hpo2, hpo3
+Explanation: In this iteration, the hyperparameters were adjusted to use tree-based models (GBM, XT, XGB & RF) for hpo1, KNN for hpo2, and 'optimize_for_deployment' presets for hpo3.
+Kaggle Score: 0.47758
+Impact of Changes
+The substantial decrease in Kaggle score compared to the initial model suggests that the chosen hyperparameter configurations might not have been well-suited for the dataset or the problem at hand. The switch to tree-based models and KNN for hpo1 and hpo2, respectively, could have introduced biases or limitations that affected model performance negatively.
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
