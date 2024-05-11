@@ -17,21 +17,7 @@ The weighted ensemble model is often a combination of multiple base models, and 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
 
-During the exploratory data analysis (EDA), several key insights were discovered:
-
-Seasonal Trends: There were clear seasonal trends in bike rental demand, with higher demand during certain months and lower demand during others. This suggests that the season feature could be an important predictor of bike rental counts.
-
-Weather Impact: Weather conditions such as temperature, humidity, and windspeed appeared to influence bike rental demand. Warmer temperatures and lower humidity were associated with higher rental counts.
-
-Time of Day: There was a noticeable variation in rental counts based on the time of day. Peaks in rental demand were observed during commuting hours, suggesting that the hour feature could be informative.
-
-Based on these insights, additional features were created:
-
-Hour Feature: Extracted the hour component from the datetime feature to capture the time of day when rentals occurred.
-
-Season and Weather Categories: Converted the season and weather features into categorical variables to ensure they are treated as categories rather than numerical values by the models. This step helps models recognize the inherent categories in these features and prevents them from interpreting them as ordinal variables.
-
-These additional features are expected to enhance the predictive power of the models by providing them with more information about the underlying patterns in the data
+I HAVE WRITTEN ALL THE SUMMARY OF THE EDA ON THE NOTEBOOK FOR EASY READING AND ACCESS. Thank you!
 
 ### How much better did your model preform after adding additional features and why do you think that is?
 
@@ -69,22 +55,18 @@ Data Cleaning and Preprocessing - Spending more time on data cleaning and prepro
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|?|?|?|?|
-|add_features|?|?|?|?|
-|hpo|?|?|?|?|
+|initial|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|1.81113|
+|add_features|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|0.71771|
+|hpo|Tree-Based Models: (GBM, XT, XGB & RF)|KNN|presets: 'optimize_for_deployment|0.47758|
 
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
-
-TODO: Replace the image below with your own.
 
 ![model_train_score.png](img/model_train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
-TODO: Replace the image below with your own.
-
 ![model_test_score.png](img/model_test_score.png)
 
 ## Summary
-TODO: Add your explanation
+my best ranking model was WeightedEnsemble_L3 with validation RMSE score of 32.501212 and a kaggle score of 0.47758
